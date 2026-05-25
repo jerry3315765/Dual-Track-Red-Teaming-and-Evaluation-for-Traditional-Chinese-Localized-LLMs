@@ -1,0 +1,93 @@
+# Fill in your model list here.
+# You can add or remove entries as needed.
+
+models:
+  - name: Gemma-3-TAIDE-12b-Chat
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/Gemma-3-TAIDE-12b-Chat
+    served_model_name: taide/Gemma-3-TAIDE-12b-Chat
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+
+  - name: breeze2-8b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/breeze2-8b
+    served_model_name: MediaTek-Research/Llama-Breeze2-8B-Instruct
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+    vllm_args:
+      - --language-model-only
+
+  - name: ds-llama-8b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/ds-llama-8b
+    served_model_name: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+
+  - name: ds-qwen-7b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/ds-qwen-7b
+    served_model_name: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+
+  - name: gemma-3-27b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/gemma-3-27b
+    served_model_name: google/gemma-3-27b-it
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+
+  - name: gemma-3-4b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/gemma-3-4b
+    served_model_name: google/gemma-3-4b-it
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+
+  - name: gpt-oss-120b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/gpt-oss-120b
+    served_model_name: openai/gpt-oss-120b
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+
+  - name: gpt-oss-20b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/gpt-oss-20b
+    served_model_name: openai/gpt-oss-20b
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+
+  - name: llama-3.2-3b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/llama-3.2-3b
+    served_model_name: meta-llama/Llama-3.2-3B-Instruct
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+
+  - name: qwen3-32b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/qwen3-32b
+    served_model_name: Qwen/Qwen3-32B
+    precision: bf16
+    api_key_env: OPENAI_API_KEY
+
+  - name: qwen3-8b
+    provider: openai-compatible
+    base_url: http://64.247.201.55:8888/v1
+    model_path: /workspace/models/qwen3-8b
+    served_model_name: Qwen/Qwen3-8B
+    precision: bf16
+    api_key_env: OPENAI_API_KEY

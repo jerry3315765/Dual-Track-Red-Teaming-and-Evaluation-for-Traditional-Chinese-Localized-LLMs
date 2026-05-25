@@ -1,0 +1,46 @@
+description: "Multi turn Actor Attack Method using Qwen3-32B-abliterated"
+
+# Number of actors to generate for each attack
+actor_num: 3
+
+# Maximum retry attempts for rejected queries
+max_retry: 3
+
+# Save intermediate results
+save_intermediate: true
+
+# Judge configuration (Gemini API for response evaluation)
+judge:
+  model_name: "gemini-2.5-flash"
+  provider: "gemini"
+  api_key: null # Set via GEMINI_API_KEY environment variable
+  temperature: 0.0
+  max_tokens: 2048
+
+# Attack model configuration (aligned with PAIR/PAP structure)
+attack_model:
+  type: whitebox  # "whitebox" or "blackbox"
+  
+  # Whitebox attack model settings
+  whitebox:
+    name: "huihui-ai/Qwen3-32B-abliterated"
+    device_map: "auto"
+    max_new_tokens: 4096
+    max_model_len: 32768
+    temperature: 0.7
+    top_p: 0.9
+    input_max_length: 32768
+    use_vllm: true
+    enable_thinking: true
+    remove_thinking: true
+    hf_token: null # Set via HF_TOKEN environment variable
+    
+    # vLLM engine configuration
+    vllm_kwargs:
+      tensor_parallel_size: 1
+      trust_remote_code: true
+      gpu_memory_utilization: 0.95
+      max_model_len: 32768
+      enforce_eager: false
+      disable_custom_all_reduce: true
+      disable_log_stats: true

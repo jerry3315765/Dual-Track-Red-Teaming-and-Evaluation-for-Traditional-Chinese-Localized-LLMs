@@ -1,0 +1,41 @@
+description: "Multi-Agent Jailbreak - Static decomposition with three-stage pipeline"
+
+config:
+  # Attack agent model (used for all three modules with different prompts)
+  attack_model:
+    name: "huihui-ai/Qwen3-32B-abliterated"
+    temperature: 0.7
+    top_p: 0.9
+    max_tokens: 4096
+    max_new_tokens: 4096
+    input_max_length: 131072
+    device_map: "auto"
+    use_vllm: true
+    auto_init: true
+    parse_retry: 2     # Maximum number of retries on parsing failure (total of 3 attempts)
+    enable_thinking: true  # Enable thinking mode
+    remove_thinking: true  # Whether to remove the thinking part from the response (only effective when enable_thinking=true)
+    
+    # vLLM configuration
+    vllm_kwargs:
+      tensor_parallel_size: 1
+      trust_remote_code: true
+      gpu_memory_utilization: 0.95
+      max_model_len: 32768
+      enforce_eager: true
+      disable_custom_all_reduce: true
+      disable_log_stats: true
+    
+    hf_token: null # Set via HF_TOKEN environment variable
+  
+  # Method-specific settings
+  num_sub_questions: 3  # Default number of sub-questions to generate
+  max_sub_questions: 5  # Maximum allowed sub-questions
+  min_sub_questions: 2  # Minimum required sub-questions
+  
+  # Performance settings
+  batch_size: 1  # Process queries individually
+  verbose: true
+  
+  # Intermediate results saving
+  save_intermediate: true

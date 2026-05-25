@@ -1,0 +1,11 @@
+# Global configuration
+experiment_name: "tw_jailbreak_v1"
+random_seed: 42
+output_dir: "data/results"
+
+# Embedding Model Configuration
+# Use local sentence-transformers model to avoid external API during analysis
+embedding_model: "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+
+# Judge Configuration (requires OPENAI_API_KEY if used)
+judge_model: "gpt-4o-mini"

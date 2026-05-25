@@ -1,0 +1,72 @@
+[
+  {
+    "id": 0,
+    "name": "baseline_assistant",
+    "source": "generated"
+  },
+  {
+    "id": 1,
+    "name": "P01",
+    "source": "baseline_tc"
+  },
+  {
+    "id": 2,
+    "name": "P02",
+    "source": "role_override_1"
+  },
+  {
+    "id": 3,
+    "name": "P03",
+    "source": "role_override_2"
+  },
+  {
+    "id": 4,
+    "name": "P04",
+    "source": "role_override_3"
+  },
+  {
+    "id": 5,
+    "name": "P05",
+    "source": "role_override_4"
+  },
+  {
+    "id": 6,
+    "name": "P06",
+    "source": "role_override_5"
+  },
+  {
+    "id": 7,
+    "name": "P07",
+    "source": "role_override_6"
+  },
+  {
+    "id": 8,
+    "name": "P08",
+    "source": "role_override_7"
+  },
+  {
+    "id": 9,
+    "name": "P09",
+    "source": "role_override_8"
+  },
+  {
+    "id": 10,
+    "name": "P10",
+    "source": "role_override_9"
+  },
+  {
+    "id": 11,
+    "name": "P11",
+    "source": "role_override_10"
+  },
+  {
+    "id": 12,
+    "name": "P12",
+    "source": "role_override_11"
+  },
+  {
+    "id": 13,
+    "name": "P13",
+    "source": "role_override_12"
+  }
+]

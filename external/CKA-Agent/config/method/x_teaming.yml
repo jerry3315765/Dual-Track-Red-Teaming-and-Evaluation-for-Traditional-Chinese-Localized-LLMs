@@ -1,0 +1,54 @@
+# X-Teaming Method Configuration
+# Multi-turn adaptive jailbreak method using pre-generated attack plans
+description: "X Teaming method configuration for correlated knowledge jailbreak experiments. This method employs a multi-turn adaptive strategy using pre-generated attack plans to bypass model defenses."
+
+experiment:
+  seed: 42
+  enable_wandb: false
+
+# Attack model configuration (Qwen3-32B)
+attack_model:
+  name: "huihui-ai/Qwen3-32B-abliterated"
+  temperature: 0.7
+  top_p: 0.9
+  max_tokens: 4096
+  max_new_tokens: 4096  # Increase the number of generated tokens to ensure complete JSON generation
+  input_max_length: 131072  # Increase maximum model length
+  device_map: "auto"
+  use_vllm: true
+  enable_thinking: true
+  remove_thinking: true
+  hf_token: null # Set via HF_TOKEN environment variable
+  
+  # vLLM engine configuration
+  vllm_kwargs:
+    tensor_parallel_size: 1
+    trust_remote_code: true
+    gpu_memory_utilization: 0.95
+    max_model_len: 32768
+    enforce_eager: false
+    disable_custom_all_reduce: true
+    disable_log_stats: true
+
+# Internal judge configuration (Gemini 2.5-flash for scoring)
+judge:
+  model_name: "gemini-2.5-flash"
+  provider: "gemini"
+  api_key: null # Set via GEMINI_API_KEY environment variable
+  temperature: 0.0
+  max_tokens: 2048  # Increased from 512 to 2048 for better response evaluation
+
+# Response truncation configuration
+truncation_limit: 2048  # Maximum tokens for truncating responses during evaluation and conversation history
+
+# Attack strategy configuration
+max_turns: 7  # Maximum turns per strategy
+strategies_per_query: 3  # Number of strategies to try per query
+run_all_strategies: false  # Stop after first successful strategy
+plan_revision: false  # Whether to extend unsuccessful plans that ran out of phases (matches official implementation)
+attack_plans_file: "data/x_teaming_default_plans.json"  # Path to pre-generated attack plans (null to use defaults)
+
+# Runtime settings
+runtime:
+  log_level: "INFO"
+  save_intermediate: true

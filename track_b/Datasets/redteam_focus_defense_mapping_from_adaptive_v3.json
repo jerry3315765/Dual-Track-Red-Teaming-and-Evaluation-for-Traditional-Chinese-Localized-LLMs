@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "name": "baseline_assistant",
+    "source": "generated"
+  },
+  {
+    "id": 1,
+    "name": "P01",
+    "source": "baseline_tc"
+  },
+  {
+    "id": 2,
+    "name": "P02",
+    "source": "role_override_style"
+  }
+]

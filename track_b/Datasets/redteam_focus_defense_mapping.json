@@ -1,0 +1,67 @@
+[
+  {
+    "id": 0,
+    "name": "noAttack",
+    "filename": "noAttack.txt"
+  },
+  {
+    "id": 1,
+    "name": "translated_aim",
+    "filename": "translated_aim.txt"
+  },
+  {
+    "id": 2,
+    "name": "translated_antigpt",
+    "filename": "translated_antigpt.txt"
+  },
+  {
+    "id": 3,
+    "name": "translated_balakula",
+    "filename": "translated_balakula.txt"
+  },
+  {
+    "id": 4,
+    "name": "translated_bh",
+    "filename": "translated_bh.txt"
+  },
+  {
+    "id": 5,
+    "name": "translated_chadgpt",
+    "filename": "translated_chadgpt.txt"
+  },
+  {
+    "id": 6,
+    "name": "translated_con_per",
+    "filename": "translated_con_per.txt"
+  },
+  {
+    "id": 7,
+    "name": "translated_dan",
+    "filename": "translated_dan.txt"
+  },
+  {
+    "id": 8,
+    "name": "translated_deltagpt",
+    "filename": "translated_deltagpt.txt"
+  },
+  {
+    "id": 9,
+    "name": "translated_devmode",
+    "filename": "translated_devmode.txt"
+  },
+  {
+    "id": 10,
+    "name": "translated_eva",
+    "filename": "translated_eva.txt"
+  },
+  {
+    "id": 11,
+    "name": "translated_evil",
+    "filename": "translated_evil.txt"
+  },
+  {
+    "id": 12,
+    "name": "translated_hackerman",
+    "filename": "translated_hackerman.txt"
+  }
+]

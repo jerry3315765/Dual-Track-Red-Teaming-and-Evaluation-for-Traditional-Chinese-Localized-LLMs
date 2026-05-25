@@ -1,0 +1,46 @@
+description: "Agent Self-Response - Direct attack agent answering without target LLM query"
+
+config:
+  # Attack agent model configuration (same structure as CKA-agent)
+  attack_model:
+    name: "huihui-ai/Qwen3-32B-abliterated"
+    temperature: 0.7
+    top_p: 0.9
+    max_tokens: 2048
+    max_new_tokens: 2048
+    input_max_length: 131072
+    device_map: "auto"
+    use_vllm: true
+    auto_init: true
+    
+    # Thinking mode control (for models like Qwen3 with thinking capability)
+    enable_thinking: true      # Enable <think> tags during generation
+    remove_thinking: true       # Remove <think>...</think> from final response
+    
+    # vLLM configuration
+    vllm_kwargs:
+      tensor_parallel_size: 1
+      trust_remote_code: true
+      gpu_memory_utilization: 0.9
+      max_model_len: 32768
+      enforce_eager: false
+      disable_custom_all_reduce: true
+      disable_log_stats: true
+      
+      rope_scaling:  # Yarn scaling for longer context
+        rope_type: "yarn"
+        factor: 4.0
+        original_max_position_embeddings: 32768
+    
+    hf_token: null # Set via HF_TOKEN environment variable
+
+  # Response generation settings
+  length_control: true           # Add length control instruction
+  max_response_words: 500        # Target response length in words
+  
+  # Performance settings
+  batch_size: 1                  # Process queries individually
+  verbose: true                  # Enable verbose logging
+  
+  # Intermediate results saving
+  save_intermediate: true        # Save intermediate results for analysis

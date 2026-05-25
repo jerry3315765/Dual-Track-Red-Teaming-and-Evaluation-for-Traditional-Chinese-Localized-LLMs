@@ -1,0 +1,75 @@
+experiment:
+  seed: 42
+  enable_wandb: false
+
+attack_model:
+  # type: whitebox | blackbox
+  type: whitebox
+  whitebox:
+    name: "huihui-ai/Qwen3-32B-abliterated" # HF model name
+    device_map: "auto"               # Multi-GPU auto mapping
+    max_new_tokens: 4096             # Max new tokens for generation (output)
+    max_model_len: 8192             # Max model length (increased from 4096) (input + output)
+    temperature: 0.7                 # Sampling temperature
+    top_p: 0.9                       # Nucleus sampling
+    input_max_length: 8192         # Max model length (increased from 4096)
+    use_vllm: true                   # Whether to use vLLM for accelerated inference
+    enable_thinking: true          # Enable thinking mode for Qwen3
+    remove_thinking: true            # Remove thinking part from response
+    hf_token: null # Set via HF_TOKEN environment variable
+    
+    # vLLM engine configuration
+    vllm_kwargs:                     # Additional vLLM configuration parameters
+      tensor_parallel_size: 1        # Multi-GPU for attack model
+      trust_remote_code: true
+      gpu_memory_utilization: 0.9    # GPU memory utilization ratio
+      max_model_len: 8192          # Maximum model length (increased from 4096)
+      enforce_eager: false           # Enable CUDA graph optimization
+      disable_custom_all_reduce: true
+      disable_log_stats: true
+    
+    max_n_attack_attempts: 1
+    initialize_output: true
+    
+  blackbox:
+    # provider: openai | anthropic | cohere | together | gemini
+    provider: "gemini"
+    name: "gemini-2.5-flash"
+    
+    api_key: null # Set via GEMINI_API_KEY, OPENAI_API_KEY, etc.
+    # Gemini proxy mode (effective when provider: "gemini" and use_proxy: true)
+    use_proxy: false
+    proxy_api_key: null # Set via PROXY_API_KEY environment variable
+    # Generation parameters
+    max_tokens: 500
+    temperature: 1.0
+    top_p: 0.9
+    max_n_attack_attempts: 1
+    initialize_output: true
+
+judge_model:
+  name: "gemini-2.5-flash"   # gemini, gpt-3.5, gpt-4, no-judge, gcg, jailbreakbench, local
+  # provider: openai | gemini (supports use_proxy for OpenAI compatibility)
+  provider: "gemini"
+
+  api_key: null # Set via GEMINI_API_KEY
+  # Gemini proxy mode (effective when provider: "gemini" and use_proxy: true)
+  use_proxy: false
+  proxy_api_key: null # Set via PROXY_API_KEY environment variable
+  max_new_tokens: 512
+  temperature: 0.0
+  # Online judge retry & backoff configuration (refer to CKA-Agent)
+  # max_retries: -1 for infinite retries; non-negative integer for finite retries
+  max_retries: -1
+  rate_limit_backoff_base: 1.0
+  rate_limit_backoff_max: 60.0
+  rate_limit_jitter: 0.2
+
+runtime:
+  n_iterations: 5
+  n_streams: 5
+  keep_last_n: 4
+  early_stop_score: 10
+  log_level: "INFO"
+  rate_limit_delay: 0.0 
+  save_intermediate: true

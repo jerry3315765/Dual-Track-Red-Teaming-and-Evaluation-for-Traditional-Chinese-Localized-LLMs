@@ -1,0 +1,17 @@
+torch
+transformers>=4.40.0
+accelerate
+bitsandbytes
+openai
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+pyyaml
+shap
+hdbscan
+tqdm
+sentence-transformers
+python-dotenv
+tiktoken

@@ -1,0 +1,7 @@
+[INFO] results_root: C:\Users\jerry\Desktop\lab\0311\0520\results\from_second_model
+[INFO] total rows discovered: 22880
+[INFO] already processed rows: 17525
+[INFO] pending rows: 5355
+[INFO] cache hits written: 12
+[INFO] rows requiring API calls: 5343
+[INFO] processed 50/5355 pending rows...

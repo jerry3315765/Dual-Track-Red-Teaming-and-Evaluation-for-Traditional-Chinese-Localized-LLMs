@@ -24,3 +24,6 @@ Thumbs.db
 
 *.tmp
 *.bak
+
+.divi_py312*/
+analysis/divi_shap_response_only*/

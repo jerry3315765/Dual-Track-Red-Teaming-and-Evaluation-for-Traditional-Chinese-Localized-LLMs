@@ -1,0 +1,106 @@
+[
+  {
+    "cluster": 17,
+    "total": 22880,
+    "success": 11341,
+    "asr_pct": 49.57,
+    "track_counts": [
+      {
+        "value": "B",
+        "count": 17160
+      },
+      {
+        "value": "A",
+        "count": 5720
+      }
+    ],
+    "model_counts": [
+      {
+        "value": "Gemma-3-TAIDE-12b-Chat__bf16",
+        "count": 2080
+      },
+      {
+        "value": "breeze2-8b__bf16",
+        "count": 2080
+      },
+      {
+        "value": "gpt-oss-120b__bf16",
+        "count": 2080
+      },
+      {
+        "value": "gpt-oss-20b__bf16",
+        "count": 2080
+      },
+      {
+        "value": "llama-3.2-3b__bf16",
+        "count": 2080
+      }
+    ],
+    "scenario_counts": [
+      {
+        "value": "2",
+        "count": 572
+      },
+      {
+        "value": "1",
+        "count": 572
+      },
+      {
+        "value": "3",
+        "count": 572
+      },
+      {
+        "value": "4",
+        "count": 572
+      },
+      {
+        "value": "5",
+        "count": 572
+      }
+    ],
+    "mutation_counts": [
+      {
+        "value": "NoMutatePolicy",
+        "count": 5720
+      },
+      {
+        "value": "OpenAIMutatorShorten",
+        "count": 3575
+      },
+      {
+        "value": "OpenAIMutatorCrossOver",
+        "count": 2145
+      },
+      {
+        "value": "OpenAIMutatorRephrase",
+        "count": 2145
+      },
+      {
+        "value": "OpenAIMutatorExpand",
+        "count": 2145
+      }
+    ],
+    "classification_counts": [
+      {
+        "value": "SAFE",
+        "count": 8745
+      },
+      {
+        "value": "UNSAFE",
+        "count": 8415
+      },
+      {
+        "value": "Full-Jailbreak",
+        "count": 1937
+      },
+      {
+        "value": "Refusal",
+        "count": 1746
+      },
+      {
+        "value": "Unsafe-Response",
+        "count": 989
+      }
+    ]
+  }
+]

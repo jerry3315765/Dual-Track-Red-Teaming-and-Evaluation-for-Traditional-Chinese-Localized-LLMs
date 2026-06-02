@@ -13,7 +13,7 @@ Use these files first:
   `results/second_judge/ab_second_judge_summary_final_clean.csv`
 - Final ASR tables:
   `results/second_judge/asr_tables_final/`
-- Cleaning manifest:
+- Response-quality manifest:
   `results/second_judge/quality_manifest/`
 
 The current valid judged corpus contains 22,603 rows. It is derived from 22,880
@@ -37,7 +37,7 @@ See `docs/PROJECT_STRUCTURE.md` and `docs/RESULTS.md` for the detailed map.
 
 ## Common Commands
 
-Regenerate the clean manifest from raw outputs and the manually cleaned CSV:
+Regenerate the response-quality manifest from raw outputs and the retained-response CSV:
 
 ```powershell
 .\.venv312\Scripts\python.exe scripts\build_quality_corpus_manifest.py `
@@ -62,6 +62,20 @@ Regenerate final ASR tables and the model/track summary:
   --input_csv results\second_judge\ab_second_judge_full_final_clean_valid.csv `
   --output_dir results\second_judge\asr_tables_final `
   --summary_csv results\second_judge\ab_second_judge_summary_final_clean.csv
+```
+
+Create the human-audit sample for linear weighted Cohen's kappa from the final
+no-hard-artifact corpus:
+
+```powershell
+.\.venv312\Scripts\python.exe scripts\sample_linear_weighted_cohen_audit.py
+```
+
+After filling `human_score` in the generated CSV, calculate agreement with:
+
+```powershell
+.\.venv312\Scripts\python.exe scripts\calculate_linear_weighted_cohen.py `
+  results\second_judge\human_audit\linear_weighted_cohen_sample_20260602_seed20260602.csv
 ```
 
 ## Notes

@@ -10,6 +10,7 @@ the response-only DIVI-SHAP analysis used in the current manuscript.
 - `data/final_judged/`: final second-judge CSVs used as the reporting input.
 - `data/quality_manifest/`: row-id manifests documenting which raw rows were retained or excluded.
 - `data/divi_shap_input/`: the final response-only corpus used for DIVI-SHAP, plus hard-artifact exclusion summaries.
+- `data/human_audit/`: stratified Track A sample for linear weighted Cohen's kappa.
 - `results/latest_divi_shap_20260602/`: compact ASR, cluster, and SHAP token tables for paper reporting.
 - `results/divi_run_no_hard_20260602_seed42/`: full DIVI-SHAP run outputs, including embeddings, labels, assignments, metadata, and SHAP JSON.
 - `scripts/`: data-quality filtering, second-judge summarization, and DIVI-SHAP input construction scripts.

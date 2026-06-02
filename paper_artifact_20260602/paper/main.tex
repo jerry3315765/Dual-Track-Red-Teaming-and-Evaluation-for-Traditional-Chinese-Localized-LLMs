@@ -15,6 +15,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{float}
+\usepackage{xurl}
 \usepackage{hyperref}
 \usepackage{multirow} 
 \usepackage{stfloats} % 讓雙欄文件中的表格放置更靈活
@@ -482,7 +483,7 @@ Table \ref{tab:scenarios} details the mapping between benign masks and harmful t
 \subsection{Environment Settings}
 Experiments were conducted on a cloud-based GPU platform equipped with NVIDIA H100 GPUs. To improve inference throughput and reduce potential behavioral degradation or safety shifts caused by quantization artifacts, we used the vLLM framework to serve all target models in full precision (\texttt{bfloat16}).
 
-To ensure reproducibility, generation was fixed with temperature 0.7, top-$p=0.9$, and a maximum length of 2048 tokens. To support full reproducibility and facilitate future research, all code, system prompts, specific mutator implementations, MCTS configurations, and experimental scripts are publicly available in the \href{https://github.com/jerry3315765/Dual-Track-Red-Teaming-and-Evaluation-for-Traditional-Chinese-Localized-LLMs}{project repository}.
+To ensure reproducibility, generation was fixed with temperature 0.7, top-$p=0.9$, and a maximum length of 2048 tokens. To support full reproducibility and facilitate future research, all code, system prompts, specific mutator implementations, MCTS configurations, and experimental scripts are publicly available at \url{https://github.com/jerry3315765/Dual-Track-Red-Teaming-and-Evaluation-for-Traditional-Chinese-Localized-LLMs}.
 
 Regarding computational overhead, the MCTS-guided mutation process in Track B involved approximately 11,420 successful automated API calls to the mutator after response-quality filtering. This incurred a modest monetary cost (roughly \$15--\$20 USD using the GPT-4o-mini API) and required around 4 to 6 hours of execution time per target model in our setup. These measurements describe the scale of the run rather than a general deployment cost.
 

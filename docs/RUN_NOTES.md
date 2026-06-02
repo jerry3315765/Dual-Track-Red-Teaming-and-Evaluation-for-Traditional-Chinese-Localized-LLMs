@@ -32,16 +32,18 @@ For cloud GPU reruns, see `docs/CLOUD_GPU.md`.
 
 ## Second Judge
 
-The completed clean second-judge result is:
+The reportable valid second-judge result is:
 
 ```text
-results/second_judge/ab_second_judge_full_final_clean.csv
+results/second_judge/ab_second_judge_full_final_clean_valid.csv
 ```
 
-To rerun the judge with slower, safer behavior:
+To rerun the judge with slower, safer behavior while keeping the final clean
+corpus filter:
 
 ```powershell
-python scripts/rejudge_ab_results.py `
+.\.venv312\Scripts\python.exe scripts\rejudge_ab_results.py `
+  --exclude_row_ids_csv results\second_judge\quality_manifest\excluded_row_ids.csv `
   --retry_errors `
   --skip_errors `
   --stop_on_daily_limit `
@@ -51,9 +53,10 @@ python scripts/rejudge_ab_results.py `
 To regenerate ASR tables:
 
 ```powershell
-python scripts/summarize_second_judge_asr.py `
-  --input results/second_judge/ab_second_judge_full_final_clean.csv `
-  --output_dir results/second_judge/asr_tables_final
+.\.venv312\Scripts\python.exe scripts\summarize_second_judge_asr.py `
+  --input_csv results\second_judge\ab_second_judge_full_final_clean_valid.csv `
+  --output_dir results\second_judge\asr_tables_final `
+  --summary_csv results\second_judge\ab_second_judge_summary_final_clean.csv
 ```
 
 ## Historical Log

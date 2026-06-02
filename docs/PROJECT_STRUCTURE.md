@@ -29,6 +29,8 @@ The root is intentionally kept small. Supporting notes live in `docs/`.
   Track B.
 - `results/second_judge/` - final second-judge artifacts.
 - `results/second_judge/asr_tables_final/` - success-rate summary tables.
+- `results/second_judge/quality_manifest/` - row-level included/excluded
+  manifests used to keep reruns aligned with the final valid corpus.
 - `results/run_logs/` - historical CSV run log.
 
 ## Local and Ignored
@@ -44,9 +46,12 @@ results.
 
 Use these files for reporting:
 
-- `results/second_judge/ab_second_judge_full_final_clean.csv`
+- `results/second_judge/ab_second_judge_full_final_clean_valid.csv`
 - `results/second_judge/ab_second_judge_summary_final_clean.csv`
 - `results/second_judge/asr_tables_final/*.csv`
+
+The retained `ab_second_judge_full_final_clean.csv` is an audit input, not the
+primary reportable corpus.
 
 Avoid resurrecting older partial outputs unless you are debugging a historical
 run.

@@ -1,6 +1,9 @@
 ﻿metric,value
-raw_rows,22880
-deduped_rows,22880
-summarized_rows,22880
+raw_rows,22603
+deduped_rows,22603
+excluded_by_manifest,0
+invalid_second_judge_rows,0
+empty_response_rows,0
+summarized_rows,22603
 raw_duplicate_extra_rows,0
 raw_error_rows,0

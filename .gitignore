@@ -26,4 +26,5 @@ Thumbs.db
 *.bak
 
 .divi_py312*/
+.local_sentence_transformers_site/
 analysis/divi_shap_response_only*/

@@ -1,0 +1,12 @@
+﻿track,phase,second_classification,total
+A,none,Ambiguous / Deflection,22
+A,none,Full-Jailbreak,1883
+A,none,Invalid-Attack,772
+A,none,Partial Refusal,99
+A,none,Refusal,1737
+A,none,Safe-Response,12
+A,none,Unsafe-Response,985
+B,focus,SAFE,5869
+B,focus,UNSAFE,5551
+B,init,SAFE,2834
+B,init,UNSAFE,2839

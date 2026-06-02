@@ -1,0 +1,11 @@
+﻿metric,value
+source_rows,22603
+divi_rows,22603
+rejected_rows,0
+hard_artifact_candidate_rows,1988
+review_candidate_rows,8089
+divi_rows_without_hard_artifact_candidates,20615
+divi_rows_without_review_candidates,14514
+embedding_column,response
+metadata_prompt_included,no
+compact_inspection_has_prompt_preview,yes

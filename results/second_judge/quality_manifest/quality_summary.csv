@@ -1,0 +1,7 @@
+﻿metric,value
+raw_rows_discovered,22880
+clean_csv_rows,22635
+valid_clean_rows,22603
+invalid_clean_rows,32
+excluded_rows,277
+unexpected_valid_clean_rows,0

@@ -1,0 +1,7 @@
+﻿track,phase,mutation,total,success,asr_pct
+B,focus,OpenAIMutatorCrossOver,2145,1157,53.94
+B,focus,OpenAIMutatorExpand,2145,1196,55.76
+B,focus,OpenAIMutatorGenerateSimilar,1411,309,21.90
+B,focus,OpenAIMutatorRephrase,2145,1059,49.37
+B,focus,OpenAIMutatorShorten,3574,1830,51.20
+B,init,NoMutatePolicy,5673,2839,50.04

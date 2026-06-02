@@ -1,0 +1,11 @@
+{
+  "input_csv": "C:\\Users\\jerry\\Desktop\\lab\\0311\\0520\\results\\second_judge\\divi_shap_input\\divi_shap_response_only_input_no_hard_artifact_candidates.csv",
+  "source_dir": "C:\\Users\\jerry\\Desktop\\lab\\0311\\0520\\analysis\\divi_shap_response_only_orig_seed42",
+  "output_dir": "C:\\Users\\jerry\\Desktop\\lab\\0311\\0520\\analysis\\divi_shap_response_only_no_hard_20260602_seed42",
+  "source_rows": 22880,
+  "input_rows": 20615,
+  "embedding_shape": [
+    20615,
+    768
+  ]
+}

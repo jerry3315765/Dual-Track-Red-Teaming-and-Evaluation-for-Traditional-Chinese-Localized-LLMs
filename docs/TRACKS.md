@@ -9,7 +9,7 @@ tooling.
 - Original role: baseline thesis experiment flow.
 - Preserved outputs: `results/from_second_model/track_a/`
 - Final judged Track A rows are included in:
-  `results/second_judge/ab_second_judge_full_final_clean.csv`
+  `results/second_judge/ab_second_judge_full_final_clean_valid.csv`
 
 ## Track B
 
@@ -17,7 +17,16 @@ tooling.
 - Original role: PromptFuzz-based red-team robustness flow.
 - Preserved outputs: `results/from_second_model/track_b/`
 - Final judged Track B rows are included in:
-  `results/second_judge/ab_second_judge_full_final_clean.csv`
+  `results/second_judge/ab_second_judge_full_final_clean_valid.csv`
+
+Track B has two phases:
+
+- `init` - initial seed evaluations.
+- `focus` - target-model responses to MCTS-guided mutated prompts.
+
+The `focus` phase is part of the fuzzing evaluation corpus, but it should be
+described as evaluated mutation-stage responses rather than final-only selected
+attacks.
 
 ## External
 

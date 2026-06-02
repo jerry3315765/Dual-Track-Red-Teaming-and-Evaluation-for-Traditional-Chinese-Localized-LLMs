@@ -31,11 +31,13 @@ cleanup.
 ## Second Judge
 
 - Main script: `scripts/rejudge_ab_results.py`
+- Response-quality manifest script: `scripts/build_quality_corpus_manifest.py`
 - Summary script: `scripts/summarize_second_judge_asr.py`
 - Final outputs:
-  - `results/second_judge/ab_second_judge_full_final_clean.csv`
+  - `results/second_judge/ab_second_judge_full_final_clean_valid.csv`
   - `results/second_judge/ab_second_judge_summary_final_clean.csv`
   - `results/second_judge/asr_tables_final/`
+  - `results/second_judge/quality_manifest/`
 
 Useful second-judge options:
 
@@ -43,9 +45,11 @@ Useful second-judge options:
 - `--skip_errors` continues past judge failures instead of blocking the run.
 - `--api_batch_size` controls request batching.
 - `--stop_on_daily_limit` stops cleanly when an API daily limit is detected.
+- `--exclude_row_ids_csv` applies the clean-corpus exclusion manifest before
+  judging, so invalid source rows are not reintroduced.
 
 ## Analysis
 
 - ASR summaries should be regenerated from
-  `results/second_judge/ab_second_judge_full_final_clean.csv`.
+  `results/second_judge/ab_second_judge_full_final_clean_valid.csv`.
 - DIVI-SHAP helpers remain under `analysis/` and `track_a/analysis/`.

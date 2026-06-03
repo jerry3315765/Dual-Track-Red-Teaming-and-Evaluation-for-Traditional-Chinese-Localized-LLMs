@@ -117,7 +117,9 @@ After manually filling the `human_score` column, calculate agreement with:
 
 ```powershell
 python scripts\calculate_linear_weighted_cohen.py `
-  data\human_audit\linear_weighted_cohen_sample_20260602_seed20260602.csv
+  data\human_audit\linear_weighted_cohen_sample_20260602_seed20260602.csv `
+  --output_csv data\human_audit\linear_weighted_cohen_results_20260603.csv `
+  --confusion_csv data\human_audit\linear_weighted_cohen_confusion_20260603.csv
 ```
 
 ## 7. Rebuild the Paper
@@ -138,3 +140,4 @@ xelatex -interaction=nonstopmode -halt-on-error main.tex
 - DIVI clusters: 21
 - SHAP summarized high-risk clusters: 9
 - Linear weighted Cohen audit sample: 300 rows, 60 rows per Track A score level
+- Linear weighted Cohen's kappa: 0.880, bootstrap 95% CI [0.839, 0.917]

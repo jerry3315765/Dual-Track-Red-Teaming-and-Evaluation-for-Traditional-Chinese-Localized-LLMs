@@ -75,7 +75,9 @@ After filling `human_score` in the generated CSV, calculate agreement with:
 
 ```powershell
 .\.venv312\Scripts\python.exe scripts\calculate_linear_weighted_cohen.py `
-  results\second_judge\human_audit\linear_weighted_cohen_sample_20260602_seed20260602.csv
+  results\second_judge\human_audit\linear_weighted_cohen_sample_20260602_seed20260602.csv `
+  --output_csv results\second_judge\human_audit\linear_weighted_cohen_results_20260603.csv `
+  --confusion_csv results\second_judge\human_audit\linear_weighted_cohen_confusion_20260603.csv
 ```
 
 ## Notes
